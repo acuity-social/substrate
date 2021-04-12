@@ -264,7 +264,7 @@ pub mod pallet {
 		fn on_runtime_upgrade() -> frame_support::weights::Weight {
 			if !UpgradedToTripleRefCount::<T>::get() {
 				UpgradedToTripleRefCount::<T>::put(true);
-				migrations::migrate_to_triple_ref_count::<T>()
+				migrations::migrate_to_dual_ref_count::<T>()
 			} else {
 				0
 			}
